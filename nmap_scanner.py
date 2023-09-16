@@ -17,3 +17,12 @@ menu = input(""""\n Choose the type of scan
             3 -> Intense
             Enter a number: """)
 
+if menu == 1:
+    print("nmap version: ", scanner.nmap_version())
+    scanner.scan(ip, '1-1024', '-v -sS')
+    print(scanner.scaninfo())
+    print("IP Status: ", scanner[ip].state())
+    print(scanner[ip].all_protocols())
+    print(" ")
+    print("Open Ports: ", scanner[ip]['tcp'].keys())
+    
