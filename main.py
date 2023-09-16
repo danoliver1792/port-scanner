@@ -21,3 +21,4 @@ for port in ports:
         print(f"{str(port)} >>> The port is close")
 
 print("Scan Finished")
+
