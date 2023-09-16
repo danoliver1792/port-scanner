@@ -25,4 +25,21 @@ if menu == 1:
     print(scanner[ip].all_protocols())
     print(" ")
     print("Open Ports: ", scanner[ip]['tcp'].keys())
+elif menu == 2:
+    print("nmap version: ", scanner.nmap_version())
+    scanner.scan(ip, '1-1024', '-v -sU')
+    print(scanner.scaninfo())
+    print("IP Status: ", scanner[ip].state())
+    print(scanner[ip].all_protocols())
+    print(" ")
+    print("Open Ports: ", scanner[ip]['udp'].keys())
+elif menu == 3:
+    print("nmap version: ", scanner.nmap_version())
+    scanner.scan(ip, '1-1024', '-v -sC')
+    print("IP Status: ", scanner[ip].state())
+    print(scanner[ip].all_protocols())
+    print(" ")
+    print("Open Ports: ", scanner[ip]['tcp'].keys())
+else:
+    print("Error! Choose a valid option")
     
